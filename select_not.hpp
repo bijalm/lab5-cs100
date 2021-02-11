@@ -10,7 +10,10 @@ public:
 	{
 		this->base = base;
 	}
-	
+
+	~Select_Not() {
+		delete base;
+	}	
 	bool select(const Spreadsheet* sheet, int row) const
 	{
 		return !(this->base->select(sheet, row));

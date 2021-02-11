@@ -14,7 +14,11 @@ public:
 		this->pos1 = pos1;
 		this->pos2 = pos2;
 	}
-	
+
+	~Select_Or() {
+		delete pos1;
+		delete pos2;
+	}	
 	bool select(const Spreadsheet* sheet, int row) const
 	{
 		return (this->pos1->select(sheet, row) || this->pos2->select(sheet, row));
